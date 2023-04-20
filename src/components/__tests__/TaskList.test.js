@@ -17,4 +17,8 @@ describe("TaskList", () => {
     render(<TaskList tasks={tasks} />);
     screen.getByText(/no hay tareas para mostrar/i);
   });
+
+  test("Shoul render basic component", () => {
+    render(<TaskList />);
+  });
 });
