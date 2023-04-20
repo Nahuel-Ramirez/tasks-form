@@ -1,0 +1,41 @@
+Primero en el package.json hay que crear un objeto "devDependencies" y agregarle los testing ahi.
+"devDependencies":{
+    "react-testing-librari",
+    "jest-testing"
+    etc
+    etc
+}
+
+Luego al script "test" hay que agregarle --coverange (se usa con Istambul) -> te da un mapa del estado de test de la aplicacion.
+
+Testing unitario: RTL(UI) - Enzyme(Funcionalidades)
+Testing E2E: Cypress
+
+Dentro de la carpeta de compenentes creamos una carpeta __tests__ y el archivo .test.js de cada componente.
+
+Despues dentro del archivo import {render} from "testing-library/react".
+la funcion encargada de testear el componente va a ser render.
+
+ej: render(<TaskForm />)
+
+¿Como se crea un archivo de test?
+describe("TaskList", () => {
+    test("mensaje...", () => {
+        le pasamos algo para testear:
+        const tasks = [
+            {id: 1, name: "Task 1", description: "Description mosk", done: false}
+        ]
+        
+        Render, devuelve un monton de objetos para testear.
+
+        const {getByText} = render(<Componente tasks={tasks}/>) -> verifica que haya un texto dentro de un componente.
+
+        expect(getByText("texto o expresion regular")).tobeInDocument();
+
+        Otra forma seria:
+        getByText("Tarea 1") -> si esto no lo encuentra, va a crashear.
+    })
+})
+
+
+Leer docu de JEST library

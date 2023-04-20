@@ -1,0 +1,12 @@
+.form-task__container {
+  margin: 100px auto;
+  width: 40%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #058632;
+  span {
+    color: red;
+  }
+  textarea {
+    resize: none;
+  }
+}
