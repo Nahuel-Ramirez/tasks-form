@@ -13,10 +13,15 @@ function App() {
     dispatch({ type: ACTIONS.SET_TASK, payload: task });
   };
 
+  const deleteTask = (tasks) => {
+    dispatch({ type: ACTIONS.DELETE_TASK, payload: tasks });
+    console.log(tasks);
+  };
+
   return (
     <div className="App">
       <TaskForm addTask={addTask} />
-      <TaskList tasks={state.tasks} />
+      <TaskList tasks={state.tasks} deleteTask={deleteTask} />
     </div>
   );
 }

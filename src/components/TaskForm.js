@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
+import { v1 as uuidv1 } from "uuid";
 
 const TaskForm = ({ addTask }) => {
   const {
@@ -9,8 +10,7 @@ const TaskForm = ({ addTask }) => {
   } = useForm();
 
   const createTask = (object) => {
-    addTask({ ...object });
-    console.log({ ...object });
+    addTask({ ...object, id: uuidv1().slice(1, 6) });
   };
   return (
     <>
